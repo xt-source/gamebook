@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa14643dc59ab24b9c004cb4bc46658, type: 3}
-  m_Name: State01
+  m_Script: {fileID: 11500000, guid: c7af6bc00a95f55478eea82ed60cdce2, type: 3}
+  m_Name: Transition
   m_EditorClassIdentifier: 
-  m_Transitions:
-  - {fileID: 11400000, guid: 9eca7818e13b15e48ad095d12197090f, type: 2}
+  m_Source: {fileID: 11400000, guid: 45f362e084c0cb846927597aefab2c27, type: 2}
+  m_Target: {fileID: 11400000, guid: 9d4422bb4ba55054f9e92f603389a00e, type: 2}
