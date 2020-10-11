@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf19dd4d73eded4398cd67d477d2436, type: 3}
   m_Name: SampleBook
   m_EditorClassIdentifier: 
+  m_States:
+  - {fileID: 11400000, guid: 45f362e084c0cb846927597aefab2c27, type: 2}
+  - {fileID: 11400000, guid: 9d4422bb4ba55054f9e92f603389a00e, type: 2}
+  m_EntryState: {fileID: 11400000, guid: 45f362e084c0cb846927597aefab2c27, type: 2}
