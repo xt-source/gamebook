@@ -148,7 +148,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.blanksoft.gamebook
   buildNumber:
-    Standalone: 0
+    Standalone: 1
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
