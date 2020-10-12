@@ -45,6 +45,17 @@ namespace Gamebook
         }
 
 
+        private void OnGUI()
+        {
+            if (book == null)
+            {
+                return;
+            }
+
+            DrawStates();
+        }
+
+
         private void Load(Book book)
         {
             if (book == null)
@@ -54,6 +65,16 @@ namespace Gamebook
 
             this.book = book;
             Repaint();
+        }
+
+
+        private void DrawStates()
+        {
+            for (int i = book.states.Count - 1; i >= 0; i--)
+            {
+                State state = book.states[i];
+                state.Draw();
+            }
         }
     }
 }
