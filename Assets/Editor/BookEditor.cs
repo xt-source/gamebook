@@ -52,6 +52,7 @@ namespace Gamebook
                 return;
             }
 
+            DrawTransitions();
             DrawStates();
         }
 
@@ -74,6 +75,20 @@ namespace Gamebook
             {
                 State state = book.states[i];
                 state.Draw();
+            }
+        }
+
+
+        private void DrawTransitions()
+        {
+            for (int i = book.states.Count - 1; i >= 0; i--)
+            {
+                State state = book.states[i];
+                for (int j = state.transitions.Count - 1; j >= 0; j--)
+                {
+                    Transition transition = state.transitions[j];
+                    transition.Draw();
+                }
             }
         }
     }
