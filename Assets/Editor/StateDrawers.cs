@@ -14,6 +14,14 @@ namespace Gamebook
         }
 
 
+        public static Rect GetBoundingBox(this State state)
+        {
+            Rect box = new Rect(state.position, state.size);
+
+            return box;
+        }
+
+
         private static GUIStyle GetStyle()
         {
             GUIStyle style = new GUIStyle(GUI.skin.box);

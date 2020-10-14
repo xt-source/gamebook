@@ -52,6 +52,8 @@ namespace Gamebook
                 return;
             }
 
+            HandleEvents();
+
             DrawTransitions();
             DrawStates();
         }
@@ -66,6 +68,57 @@ namespace Gamebook
 
             this.book = book;
             Repaint();
+        }
+
+
+        private void HandleEvents()
+        {
+            Event e = Event.current;
+            switch (e.type)
+            {
+                case EventType.MouseDown:
+                    {
+                        Object obj = GetObjectAt(e.mousePosition);
+                        if (obj == null)
+                        {
+                            Selection.activeObject = book;
+                        }
+                        else
+                        {
+                            Selection.activeObject = obj;
+                        }
+
+                        break;
+                    }
+            }
+        }
+
+
+        private Object GetObjectAt(Vector2 position)
+        {
+            for (int i = 0; i < book.states.Count; i++)
+            {
+                State state = book.states[i];
+                if (state.GetBoundingBox().Contains(position))
+                {
+                    return state;
+                }
+            }
+
+            for (int i = 0; i < book.states.Count; i++)
+            {
+                State state = book.states[i];
+                for (int j = 0; j < state.transitions.Count; j++)
+                {
+                    Transition transition = state.transitions[j];
+                    if (transition.GetBoundingBox().Contains(position))
+                    {
+                        return transition;
+                    }
+                }
+            }
+
+            return null;
         }
 
 

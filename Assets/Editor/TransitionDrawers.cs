@@ -18,6 +18,21 @@ namespace Gamebook
         }
 
 
+        public static Rect GetBoundingBox(this Transition transition)
+        {
+            Vector2 size = new Vector2(30f, 30f);
+
+            Vector2 source = transition.source.position + transition.source.size / 2;
+            Vector2 target = transition.target.position + transition.target.size / 2;
+            Vector2 delta = target - source;
+            Vector2 center = source + delta / 2;
+
+            Rect box = new Rect(center - size / 2, size);
+
+            return box;
+        }
+
+
         private static void DrawLine(Vector2 source, Vector2 target)
         {
             Texture2D lineTex = GetLineTexture();
